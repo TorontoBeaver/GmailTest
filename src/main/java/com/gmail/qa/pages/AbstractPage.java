@@ -6,7 +6,13 @@ import com.gmail.qa.base.Browser;
 public class AbstractPage {
 	protected Browser browser;
 
+
+
 	public AbstractPage() {
 		this.browser = Browser.getInstance();
+	}
+
+	public String getPageTitle() {
+		return browser.getTitle();
 	}
 }

@@ -10,11 +10,7 @@ public class HomePage extends AbstractPage {
 	private static final By SENT__BUTTON_LOCATOR = By.xpath("//a[@title='Sent']");
 	private static final By MORE__BUTTON_LOCATOR = By.xpath("//span[@class='CJ'][contains(.,'More')]");
 	private static final By TRASH__BUTTON_LOCATOR = By.xpath("//a[@title='Trash']");
-
-	public String geHomePageTitle() {
-
-		return browser.getTitle();
-	}
+	private static final By USER_AVATAR_LOCATOR = By.xpath("//a[contains(@aria-label,'potlightexpress@gmail.com')]");
 
 
 	public NewMessagePage clickComposeButton() {
@@ -49,5 +45,8 @@ public class HomePage extends AbstractPage {
 
 	}
 
+	public boolean isUserAvatarDisplayed() {
+		return browser.isDisplayed(USER_AVATAR_LOCATOR);
+	}
 
 }

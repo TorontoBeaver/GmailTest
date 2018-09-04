@@ -10,9 +10,7 @@ public class NewMessagePage extends AbstractPage {
 	private static final By BODY_INPUT_LOCATOR = By.xpath("//div[@aria-label=\"Message Body\"]");
 	private static final By SEND_BUTTON_LOCATOR = By.xpath("//div[@role='button' and contains(@data-tooltip,'Send')]");
 
-	public String getNewMessagePageTitle() {
-		return browser.getTitle();
-	}
+
 
 	public HomePage sendMessage(String newMessageEmail, String newMessageSubject, String newMessage) {
 

@@ -2,6 +2,11 @@ package com.gmail.qa.pages;
 
 import org.openqa.selenium.By;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 public class IntroductionPage extends AbstractPage {
 
 	private static final By GMAIL_LOGO_LOCATOR = By.xpath("//div[contains(@class,'gmail-logo')]");
@@ -11,18 +16,37 @@ public class IntroductionPage extends AbstractPage {
 	private static final By FOR_WORK_BUTTON_LOCATOR = By.xpath("//a[contains(@class,'for-work')]");
 
 
-	public String getIntroPageTitle() {
+	public IntroductionPage open() {
 
-		return browser.getTitle();
+
+		Properties prop = new Properties();
+
+		FileInputStream ip = null;
+		try {
+			ip = new FileInputStream("src/main/java/com/gmail/qa/config/config.properties");
+		} catch (
+				FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		try {
+			prop.load(ip);
+		} catch (
+				IOException e) {
+			e.printStackTrace();
+		}
+		String url = prop.getProperty("welcomPageUrl");
+		browser.open(url);
+		return new IntroductionPage();
+
 	}
 
 	public boolean getGmailLogo() {
 
 		return browser.isDisplayed(GMAIL_LOGO_LOCATOR);
+
 	}
 
-	public LogInPage signIn() {
-
+	public LogInPage openSignInPage() {
 		browser.click(SIGNIN_BUTTON_LOCATOR);
 
 
