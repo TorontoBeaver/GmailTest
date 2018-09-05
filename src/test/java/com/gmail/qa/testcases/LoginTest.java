@@ -20,7 +20,7 @@ public class LoginTest {
 		prop = new Properties();
 		FileInputStream ip = null;
 		try {
-			ip = new FileInputStream("/Users/vladimirnemtcev/Downloads/GmailTest/src/main/java/com/gmail/qa/config/config.properties");
+			ip = new FileInputStream("src/main/java/com/gmail/qa/config/config.properties");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
