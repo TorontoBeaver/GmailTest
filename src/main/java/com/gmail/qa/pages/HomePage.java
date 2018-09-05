@@ -49,4 +49,5 @@ public class HomePage extends AbstractPage {
 		return browser.isDisplayed(USER_AVATAR_LOCATOR);
 	}
 
+
 }
