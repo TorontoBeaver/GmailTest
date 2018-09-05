@@ -11,9 +11,7 @@ public class NewMessagePage extends AbstractPage {
 	private static final By SEND_BUTTON_LOCATOR = By.xpath("//div[@role='button' and contains(@data-tooltip,'Send')]");
 
 
-
 	public HomePage sendMessage(String newMessageEmail, String newMessageSubject, String newMessage) {
-
 
 		browser.type(ADDRESS_INPUT_LOCATOR, newMessageEmail);
 		browser.type(SUBJECT_INPUT_LOCATOR, newMessageSubject);

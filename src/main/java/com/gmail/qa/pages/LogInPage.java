@@ -31,7 +31,6 @@ public class LogInPage extends AbstractPage {
 
 	public boolean isUWrongUserNameErrorMessageDisplayed() {
 		return browser.isDisplayed(EXPECTED_USERNAME_ERROR_MESSAGE);
-
 	}
 
 	public HomePage wrongUserLoginPassword(String username, String wrongPassword) {

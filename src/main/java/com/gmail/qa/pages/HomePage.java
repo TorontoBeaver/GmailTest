@@ -17,7 +17,6 @@ public class HomePage extends AbstractPage {
 
 		browser.click(COMPOSE_BUTTON_LOCATOR);
 		return new NewMessagePage();
-
 	}
 
 	public InboxPage clickInboxButton() {
@@ -35,14 +34,12 @@ public class HomePage extends AbstractPage {
 	public void clickMoreButton() {
 
 		browser.click(MORE__BUTTON_LOCATOR);
-
 	}
 
 	public TrashPage clickTrashButton() {
 
 		browser.click(TRASH__BUTTON_LOCATOR);
 		return new TrashPage();
-
 	}
 
 	public boolean isUserAvatarDisplayed() {

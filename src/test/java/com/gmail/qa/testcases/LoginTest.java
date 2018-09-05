@@ -29,9 +29,7 @@ public class LoginTest {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
-
 
 	@Test
 
@@ -47,7 +45,6 @@ public class LoginTest {
 		HomePage homePage = logInPage.userLogIn(prop.getProperty("username"), prop.getProperty("password"));
 
 		Assert.assertTrue(homePage.isUserAvatarDisplayed());
-
 	}
 
 	@Test
@@ -85,6 +82,5 @@ public class LoginTest {
 		Assert.assertTrue(logInPage.isWrongPasswordErrorMessageDisplayed());
 
 	}
-
 
 }

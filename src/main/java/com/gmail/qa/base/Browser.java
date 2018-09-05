@@ -33,7 +33,7 @@ public class Browser {
 	}
 
 	private static Browser init() {
-		System.setProperty("webdriver.chrome.driver", "/Users/vladimirnemtcev/Downloads/demo_actions/src/main/resources/chromedriver");
+		System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().pageLoadTimeout(PAGE_LOAD_DEFAULT_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(COMMAND_DEFAULT_TIMEOUT_SECONDS, TimeUnit.SECONDS);
