@@ -1,9 +1,12 @@
 package com.gmail.qa.testcases;
 
+import com.gmail.qa.base.Browser;
 import com.gmail.qa.pages.HomePage;
 import com.gmail.qa.pages.IntroductionPage;
 import com.gmail.qa.pages.LogInPage;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
@@ -11,11 +14,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+
 public class LoginTest {
 
 	public static Properties prop;
 
-	public LoginTest() {
+	@BeforeClass
+
+	public void setUpProperties() {
 
 		prop = new Properties();
 		FileInputStream ip = null;
@@ -83,4 +89,10 @@ public class LoginTest {
 
 	}
 
+	@AfterClass(description = "close browser")
+	public void kill() {
+		Browser.kill();
+	}
 }
+
+
