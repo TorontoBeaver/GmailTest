@@ -9,6 +9,7 @@ public class NewMessagePage extends AbstractPage {
 	private static final By SUBJECT_INPUT_LOCATOR = By.xpath("//input[@name=\"subjectbox\"]");
 	private static final By BODY_INPUT_LOCATOR = By.xpath("//div[@aria-label=\"Message Body\"]");
 	private static final By SEND_BUTTON_LOCATOR = By.xpath("//div[@role='button' and contains(@data-tooltip,'Send')]");
+	private static final By EMAIL_RECIPIENT_LOCATOR = By.xpath("//span[contains(text(),\"Message sent\")]");
 
 
 	public HomePage sendMessage(String newMessageEmail, String newMessageSubject, String newMessage) {
@@ -19,6 +20,16 @@ public class NewMessagePage extends AbstractPage {
 		browser.click(SEND_BUTTON_LOCATOR);
 
 		return new HomePage();
+	}
+
+	public boolean subjectFieldIsDisplayed() {
+		return browser.isDisplayed(SUBJECT_INPUT_LOCATOR);
+	}
+
+	public boolean emailRecipientIsDisplayed(){
+
+		return browser.isDisplayed(EMAIL_RECIPIENT_LOCATOR);
+
 	}
 
 }

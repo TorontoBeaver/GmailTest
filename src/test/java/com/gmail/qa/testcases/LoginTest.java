@@ -21,7 +21,7 @@ public class LoginTest {
 
 	@BeforeClass
 
-	public void setUpProperties() {
+	public void setUpConfigFileProperties() {
 
 		prop = new Properties();
 		FileInputStream ip = null;

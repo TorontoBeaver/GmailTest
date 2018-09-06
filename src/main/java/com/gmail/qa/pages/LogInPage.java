@@ -2,6 +2,11 @@ package com.gmail.qa.pages;
 
 import org.openqa.selenium.By;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 public class LogInPage extends AbstractPage {
 
 
@@ -46,4 +51,26 @@ public class LogInPage extends AbstractPage {
 		return browser.isDisplayed(EXPECTED_USERPASSWORD_ERROR_MESSAGE);
 	}
 
+	public LogInPage open() {
+
+		Properties prop = new Properties();
+
+		FileInputStream ip = null;
+		try {
+			ip = new FileInputStream("src/main/java/com/gmail/qa/config/config.properties");
+		} catch (
+				FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		try {
+			prop.load(ip);
+		} catch (
+				IOException e) {
+			e.printStackTrace();
+		}
+		String url = prop.getProperty("loginPageUrl");
+		browser.open(url);
+		return new LogInPage();
+
+	}
 }
