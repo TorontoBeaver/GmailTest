@@ -68,9 +68,43 @@ public class HomePageTest {
 		Assert.assertTrue(newMessagePage.emailRecipientIsDisplayed());
 	}
 
+
+	@Test
+	public void deleteReceivedMessageTest(){
+
+	}
+
+
 	@AfterClass(description = "close browser")
 
 	public void kill() {
 		Browser.kill();
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
